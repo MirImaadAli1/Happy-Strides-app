@@ -4,11 +4,12 @@ import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
 
-export default function TabThreeScreen() {
+export default function Careemdelivery() {
   return (
     <View style={styles.container}>
 
       <Text style={styles.title}>Enter your Phone number</Text>
+      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)"/>
       <View style={{ flexDirection: "row" }}>
         <View style={{ flex: 1 }}>
           <Text style={styles.number}>+971</Text>
@@ -41,19 +42,18 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginLeft: 50,
     justifyContent: 'flex-start',
-
   },
   input: {
     borderWidth: 1,
     color: 'white',
     borderColor: '#777',
     padding: 8,
-    margin: 10,
+    margin: 0,
     width: 220,
     marginRight: 20,
-    justifyContent: 'flex-end'
-
-
+    justifyContent: 'flex-end',
+    position: 'absolute',
+    right: 35,
   },
   Careembutton: {
     alignItems: 'center',
@@ -67,7 +67,8 @@ const styles = StyleSheet.create({
   },
   separator: {
     marginVertical: 30,
-    height: 5,
-    width: '90%',
+    height: 1,
+    width: '80%',
   },
+  
 });
