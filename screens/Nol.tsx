@@ -1,9 +1,33 @@
-import { StyleSheet, TextInput, Button, Pressable } from 'react-native';
+import { StyleSheet, TextInput, Button, Pressable, Alert,  } from 'react-native';
+import React, {useState} from 'react';
 
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View, } from '../components/Themed';
 
-export default function TabTwoScreen() {
+
+export default function Nol() { 
+  
+  
+  const [inputValue, setInputValue] = useState('');
+  const connectPrompt = () => {
+    Alert.alert('Message', 'Your Nol Card has been connected', [
+      {
+        text: 'Cancel',
+        onPress: () => console.log('Cancel Pressed'),
+        style: 'cancel',
+      },
+      {text: 'OK', onPress: () => console.log('OK Pressed')},
+    ]);
+  }
+  
+  const handleInputChange = (title) => {
+    // Define the regular expression to match the desired format (numbers and spaces)
+    const regex = /^\d+$/;  
+    if (regex.test(title)) {
+      setInputValue(title);
+    }
+  };
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Enter Nol Tag ID</Text>
@@ -12,14 +36,20 @@ export default function TabTwoScreen() {
         style={styles.input}
         placeholder="eg: 100 000 0000"
         placeholderTextColor="grey"
+        value={inputValue}
+        onChangeText={handleInputChange}
       />
-      <Pressable style={styles.Nolbutton}>
+      <Pressable 
+        onPress={() => {
+          if(inputValue = [])
+
+
+
+        }}
+        style={styles.Nolbutton}>
         <Text style={styles.title}>Connect</Text>
       </Pressable>
     </View>
-
-
-
   );
 }
 
