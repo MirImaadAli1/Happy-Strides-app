@@ -15,24 +15,45 @@ const linking: LinkingOptions<RootStackParamList> = {
     screens: {
       Root: {
         screens: {
-          TabOne: {
+          Rewards: {
             screens: {
-              TabOneScreen: 'one',
+              Rewards: 'one',
             },
           },
-          TabTwo: {
+          Nol: {
             screens: {
-              TabTwoScreen: 'two',
+              Nol: 'two',
             },
           },
-          TabThree: {
+          Careemdelivery: {
             screens: {
-              TabTwoScreen: 'Three',
+              Careemdelivery: 'Three',
             },
           },
-          TabFour: {
+          Settings: {
             screens: {
-              TabTwoScreen: 'Four',
+              Settings: 'Four',
+            },
+          },
+          Stepcounter: {
+            screens: {
+              Stepcounter: 'Five',
+            },
+          },
+          Noondelivery: {
+            screens: {
+              Noondelivery: 'Six',
+            },
+          },
+          Instashop: {
+            screens: {
+              Instashop: 'Seven',
+            },
+          },
+
+          Account: {
+            screens: {
+              Account: 'Eight',
             },
           },
 
