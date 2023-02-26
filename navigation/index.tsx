@@ -14,12 +14,19 @@ import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import ModalScreen from '../screens/ModalScreen';
 import NotFoundScreen from '../screens/NotFoundScreen';
-import TabOneScreen from '../screens/TabOneScreen';
-import TabTwoScreen from '../screens/TabTwoScreen';
-import TabThreeScreen from '../screens/TabThreeScreen';
-import TabFourScreen from '../screens/TabFourScreen'
+import Validation from '../screens/Validation';
+import SignUp from '../screens/SignUp';
+import Login from '../screens/Login';
+import Stepcounter from '../screens/Stepcounter';
+import Rewards from '../screens/Rewards';
+import Nol from '../screens/Nol';
+import Careemdelivery from '../screens/Careemdelivery';
+import Noondelivery from '../screens/Noondelivery';
+import Instashop from '../screens/Instashop';
+import Settings from '../screens/Settings';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
+import Account from '../screens/Account';
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
   return (
@@ -42,6 +49,7 @@ function RootNavigator() {
     <Stack.Navigator>
       <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: false }} />
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
+      <Stack.Screen name="Account" component={Account} /> 
       <Stack.Group screenOptions={{ presentation: 'modal' }}>
         <Stack.Screen name="Modal" component={ModalScreen} />
       </Stack.Group>
@@ -60,15 +68,15 @@ function BottomTabNavigator() {
 
   return (
     <BottomTab.Navigator
-      initialRouteName="TabOne"
+      initialRouteName="Validation"
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme].tint,
       }}>
       <BottomTab.Screen
-        name="TabOne"
-        component={TabOneScreen}
-        options={({ navigation }: RootTabScreenProps<'TabOne'>) => ({
-          title: 'Tab One',
+        name="Validation"
+        component={Validation}
+        options={({ navigation }: RootTabScreenProps<'Validation'>) => ({
+          title: 'Validation',
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
           headerRight: () => (
             <Pressable
@@ -87,31 +95,97 @@ function BottomTabNavigator() {
         })}
       />
       <BottomTab.Screen
-        name="TabTwo"
-        component={TabTwoScreen}
+        name="Signup"
+        component={SignUp}
         options={{
-          title: 'Tab Two',
+          title: 'Sign Up',
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}
       />
 
       <BottomTab.Screen
-        name="TabThree"
-        component={TabThreeScreen}
+        name="Login"
+        component={Login}
         options={{
-          title: 'Tab Three',
+          title: 'Login',
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}
       />
 
       <BottomTab.Screen
-        name="TabFour"
-        component={TabFourScreen}
+        name="Stepcounter"
+        component={Stepcounter}
         options={{
-          title: 'Tab Four',
+          title: 'Step Counter',
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}
       />
+
+       <BottomTab.Screen
+        name="Settings"
+        component={Settings}
+        options={{
+          title: 'Settings',
+          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+        }}
+      />
+
+      
+      <BottomTab.Screen
+        name="Account"
+        component={Account}
+        options={{
+          title: 'Account',
+          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+        }}
+      />
+      
+
+      <BottomTab.Screen
+        name="Rewards"
+        component={Rewards}
+        options={{
+          title: 'Rewards',
+          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+        }}
+      />
+      <BottomTab.Screen
+        name="Nol"
+        component={Nol}
+        options={{
+          title: 'Nol',
+          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+        }}
+      />
+
+      <BottomTab.Screen
+        name="Careemdelivery"
+        component={Careemdelivery}
+        options={{
+          title: 'Careem Delivery',
+          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+        }}
+      />
+
+      <BottomTab.Screen
+        name="Noondelivery"
+        component={Noondelivery}
+        options={{
+          title: 'Noon Delivery',
+          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+        }}
+      />
+
+      <BottomTab.Screen
+        name="Instashop"
+        component={Instashop}
+        options={{
+          title: 'Instashop',
+          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+        }}
+      />
+
+
 
     </BottomTab.Navigator>
   );
